@@ -1,4 +1,4 @@
-require 'pry'
+
 class Triangle
   attr_reader :a , :b, :c
   
