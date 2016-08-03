@@ -1,18 +1,18 @@
 class Triangle
   # write code here
-  attr_accessor :los1, :los2, :los3
+  attr_accessor :a, :b, :c
 
-  def initialize(los1, los2, los3)
-  	@los1 = los1
-  	@los2 = los2
-  	@los3 = los3
+  def initialize(a, b, c)
+  	@a = a
+  	@b = b
+  	@c = c
   end
 
   def kind
   	if self.valid?
-  		if self.los1 == self.los2 && self.los2 == self.los3
+  		if self.a == self.b && self.b == self.c
 			:equilateral
-		elsif self.los1 == self.los2 || self.los2 == self.los3 || self.los1 == self.los3
+		elsif self.a == self.b || self.b == self.c || self.a == self.c
 			:isosceles
 		else
 			:scalene
@@ -23,10 +23,10 @@ class Triangle
   end
 
   def valid?
-  	sum1 = self.los1 + self.los2
-  	sum2 = self.los2 + self.los3
-  	sum3 = self.los1 + self.los3
-  	if (self.los1 > 0 && self.los2 > 0 && self.los3 >0) && (sum1 >self.los3 && sum2 > self.los1 && sum3 > self.los2)
+  	sum1 = self.a + self.b
+  	sum2 = self.b + self.c
+  	sum3 = self.a + self.c
+  	if (self.a > 0 && self.b > 0 && self.c >0) && (sum1 >self.c && sum2 > self.a && sum3 > self.b)
   		true
   	else
   		false
